@@ -8,7 +8,9 @@ public:
     enum suit { CLUBS, DIAMONDS, HEARTS, SPADES };
     suit cSuit;
     bool cIsFaceUp;
-
+    
+    friend std::ostream& operator<<(std::ostream& os, const  Card& aCard); //Lesson F Task 5
+    
     Card(rank r, suit s, bool ifu) : cRank(r), cSuit(s), cIsFaceUp(ifu) { }
     
     void Flip() {
@@ -67,8 +69,8 @@ public:
         return tValue;
     }
 };
-
 class GenericPlayer : public Hand { //Lesson E Task 4
+    friend std::ostream& operator<<(std::ostream& os, const GenericPlayer& aGenericPlauer); //Lesson F Task 5
 protected:
     std::string m_Name;
 public:
@@ -84,6 +86,71 @@ public:
         std::cout << m_Name << " looser.. " << std::endl;
     }
 };
+class Player : public GenericPlayer { //Lesson F Task 3
+public:
+    Player(const std::string& name) : GenericPlayer(name) { };
+    virtual ~Player() { };
+    
+    virtual bool isHitting() const {
+        char more;
+        std::cout << m_Name << ", one more? (y/n)";
+        std::cin >> more;
+        return (more == 'y' || more == 'Y');
+    }
+    void Win() const {
+        std::cout << m_Name << "wins!" << std::endl;
+    }
+    void Lose() const {
+        std::cout << m_Name << "loses!" << std::endl;
+    }
+    void Push() const {
+        std::cout << m_Name << "pushes." << std::endl;
+    }
+};
+
+class House : public GenericPlayer { //Lesson F Task 4
+public:
+    House(const std::string& name = "House") : GenericPlayer(name) { }
+    virtual ~House() { }
+    
+    virtual bool isHitting() const {
+        return (GetTotalValue() <= 16);
+    }
+    void FlipFirstCard() {
+        if (!(m_Cards.empty())) {
+            m_Cards[0]->Flip();
+        } else {
+            std::cout << "There is no card to flip." << std::endl;
+        }
+    }
+};
+
+std::ostream& operator<<(std::ostream& os, const Card& aCard) { //Lesson F Task 5
+    const std::string RANKS[] = { "0", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+    const std::string SUITS[] = { "c", "d", "h", "s" };
+    if (aCard.cIsFaceUp) {
+        os << RANKS[aCard.cRank] << SUITS[aCard.cSuit];
+    } else {
+        os << "XX";
+    }
+    return os;
+};
+
+std::ostream& operator<<(std::ostream& os, const GenericPlayer& aGenericPlayer) { //Lesson F Task 5
+    os << aGenericPlayer.m_Name << " ";
+    std::vector<Card*>::const_iterator pCard;
+    if (!aGenericPlayer.m_Cards.empty()) {
+        for (pCard = aGenericPlayer.m_Cards.begin(); pCard != aGenericPlayer.m_Cards.end(); pCard++) {
+            os << *(*pCard) << " ";
+        }
+        if (aGenericPlayer.GetTotalValue() != 0) {
+            std::cout << aGenericPlayer.GetTotalValue();
+        }
+    } else {
+        os << "empty";
+    }
+    return os;
+}
 
 int main() {
     
