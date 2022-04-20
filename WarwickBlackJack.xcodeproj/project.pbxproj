@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5F4F872C280B07BE00B16158 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F872B280B07BE00B16158 /* main.cpp */; };
+		5F4F8736280DDC2500B16158 /* Hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F8734280DDC2500B16158 /* Hand.cpp */; };
+		5F4F8739280DDC3900B16158 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F8737280DDC3900B16158 /* Card.cpp */; };
+		5F4F873C280DE06A00B16158 /* GenericPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F873A280DE06A00B16158 /* GenericPlayer.cpp */; };
+		5F4F8740280DE3B300B16158 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F873E280DE3B300B16158 /* Player.cpp */; };
+		5F4F8743280DE50100B16158 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F8741280DE50100B16158 /* House.cpp */; };
+		5F4F8746280DE70000B16158 /* Deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F8744280DE70000B16158 /* Deck.cpp */; };
+		5F4F8749280DE9E100B16158 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F8747280DE9E100B16158 /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,20 @@
 /* Begin PBXFileReference section */
 		5F4F8728280B07BE00B16158 /* WarwickBlackJack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WarwickBlackJack; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4F872B280B07BE00B16158 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5F4F8734280DDC2500B16158 /* Hand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hand.cpp; sourceTree = "<group>"; };
+		5F4F8735280DDC2500B16158 /* Hand.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Hand.hpp; sourceTree = "<group>"; };
+		5F4F8737280DDC3900B16158 /* Card.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		5F4F8738280DDC3900B16158 /* Card.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Card.hpp; sourceTree = "<group>"; };
+		5F4F873A280DE06A00B16158 /* GenericPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GenericPlayer.cpp; sourceTree = "<group>"; };
+		5F4F873B280DE06A00B16158 /* GenericPlayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GenericPlayer.hpp; sourceTree = "<group>"; };
+		5F4F873E280DE3B300B16158 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		5F4F873F280DE3B300B16158 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		5F4F8741280DE50100B16158 /* House.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = House.cpp; sourceTree = "<group>"; };
+		5F4F8742280DE50100B16158 /* House.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = House.hpp; sourceTree = "<group>"; };
+		5F4F8744280DE70000B16158 /* Deck.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Deck.cpp; sourceTree = "<group>"; };
+		5F4F8745280DE70000B16158 /* Deck.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Deck.hpp; sourceTree = "<group>"; };
+		5F4F8747280DE9E100B16158 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		5F4F8748280DE9E100B16158 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +78,39 @@
 		5F4F872A280B07BE00B16158 /* WarwickBlackJack */ = {
 			isa = PBXGroup;
 			children = (
+				5F4F8733280DD85100B16158 /* src */,
+				5F4F8732280DD84600B16158 /* include */,
 				5F4F872B280B07BE00B16158 /* main.cpp */,
 			);
 			path = WarwickBlackJack;
+			sourceTree = "<group>";
+		};
+		5F4F8732280DD84600B16158 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5F4F8738280DDC3900B16158 /* Card.hpp */,
+				5F4F8745280DE70000B16158 /* Deck.hpp */,
+				5F4F8748280DE9E100B16158 /* Game.hpp */,
+				5F4F873B280DE06A00B16158 /* GenericPlayer.hpp */,
+				5F4F8735280DDC2500B16158 /* Hand.hpp */,
+				5F4F8742280DE50100B16158 /* House.hpp */,
+				5F4F873F280DE3B300B16158 /* Player.hpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		5F4F8733280DD85100B16158 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5F4F8737280DDC3900B16158 /* Card.cpp */,
+				5F4F8744280DE70000B16158 /* Deck.cpp */,
+				5F4F8747280DE9E100B16158 /* Game.cpp */,
+				5F4F873A280DE06A00B16158 /* GenericPlayer.cpp */,
+				5F4F8734280DDC2500B16158 /* Hand.cpp */,
+				5F4F8741280DE50100B16158 /* House.cpp */,
+				5F4F873E280DE3B300B16158 /* Player.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4F873C280DE06A00B16158 /* GenericPlayer.cpp in Sources */,
+				5F4F8739280DDC3900B16158 /* Card.cpp in Sources */,
+				5F4F8743280DE50100B16158 /* House.cpp in Sources */,
+				5F4F8749280DE9E100B16158 /* Game.cpp in Sources */,
+				5F4F8736280DDC2500B16158 /* Hand.cpp in Sources */,
+				5F4F8746280DE70000B16158 /* Deck.cpp in Sources */,
 				5F4F872C280B07BE00B16158 /* main.cpp in Sources */,
+				5F4F8740280DE3B300B16158 /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
